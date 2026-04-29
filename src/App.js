@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Courses from "./components/Courses";
+import Stats from "./components/Stats";
+import Comparison from "./components/Comparison";
+import Companies from "./components/Companies";
+import Trust from "./components/Trust";
+import Features from "./components/Features";
+import Footer from "./components/Footer";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+
+      <Routes>
+        {/* HOME PAGE */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Courses />
+              <Stats />
+              <Comparison />
+              <Companies />
+              <Trust />
+              <Features />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* COURSES PAGE */}
+        <Route
+          path="/courses"
+          element={
+            <>
+              <Courses />
+              <Stats />
+              <Comparison />
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 }
 
-export default App;
+export default App; 
